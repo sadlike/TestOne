@@ -33,6 +33,10 @@
     [self initView];
     
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+      [self changeAn];
+}
 -(void)initView
 {
     showImgView =[[UIImageView alloc]initWithFrame:CGRectMake(50, 200, 100, 100)];
@@ -53,8 +57,6 @@
     originalPoint = showImgView.center;
     UITapGestureRecognizer *tapImg=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImg:)];
     [showImgView addGestureRecognizer:tapImg];
-
-      [self changeAn];
 }
 -(void)changeImgViewAnimationWithFrame:(CGRect)rect
 {

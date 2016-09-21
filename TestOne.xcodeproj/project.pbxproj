@@ -35,6 +35,8 @@
 		958823E71D66AB580096904E /* show.png in Resources */ = {isa = PBXBuildFile; fileRef = 958823E61D66AB580096904E /* show.png */; };
 		958823EA1D66AD850096904E /* UIImage+Corlar.m in Sources */ = {isa = PBXBuildFile; fileRef = 958823E91D66AD850096904E /* UIImage+Corlar.m */; };
 		958823F31D66AFFE0096904E /* UIImage+CustomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 958823F21D66AFFE0096904E /* UIImage+CustomLayer.m */; };
+		959AF9801D92660A0083560F /* libReactiveCocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959AF97F1D92660A0083560F /* libReactiveCocoa.a */; };
+		959AF9821D9266180083560F /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959AF9811D9266180083560F /* libAFNetworking.a */; };
 		95A2D84E1D76D1C8001CB5CA /* VHSSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2D84D1D76D1C8001CB5CA /* VHSSteps.m */; };
 		95A2D8511D76D342001CB5CA /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2D8501D76D342001CB5CA /* RootViewController.m */; };
 		95ED98C01D7D0A5F0068B090 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ED98BF1D7D0A5F0068B090 /* JavaScriptCore.framework */; };
@@ -111,6 +113,8 @@
 		958823E91D66AD850096904E /* UIImage+Corlar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Corlar.m"; sourceTree = "<group>"; };
 		958823F11D66AFFE0096904E /* UIImage+CustomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomLayer.h"; sourceTree = "<group>"; };
 		958823F21D66AFFE0096904E /* UIImage+CustomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomLayer.m"; sourceTree = "<group>"; };
+		959AF97F1D92660A0083560F /* libReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactiveCocoa.a; path = "../Library/Developer/Xcode/DerivedData/TestOne-fmqzbchmlumwnpdolnhlaquanibq/Build/Products/Debug-iphonesimulator/ReactiveCocoa/libReactiveCocoa.a"; sourceTree = "<group>"; };
+		959AF9811D9266180083560F /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../Library/Developer/Xcode/DerivedData/TestOne-fmqzbchmlumwnpdolnhlaquanibq/Build/Products/Debug-iphonesimulator/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		95A2D84C1D76D1C8001CB5CA /* VHSSteps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VHSSteps.h; sourceTree = "<group>"; };
 		95A2D84D1D76D1C8001CB5CA /* VHSSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VHSSteps.m; sourceTree = "<group>"; };
 		95A2D84F1D76D342001CB5CA /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959AF9821D9266180083560F /* libAFNetworking.a in Frameworks */,
+				959AF9801D92660A0083560F /* libReactiveCocoa.a in Frameworks */,
 				9528FB4C1D7D4B89003B09E0 /* CoreMotion.framework in Frameworks */,
 				9528FB4A1D7D4B81003B09E0 /* Security.framework in Frameworks */,
 				9528FAEC1D7D2D5E003B09E0 /* Foundation.framework in Frameworks */,
@@ -173,6 +179,8 @@
 		331B637D42904E7A01C9EA21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				959AF9811D9266180083560F /* libAFNetworking.a */,
+				959AF97F1D92660A0083560F /* libReactiveCocoa.a */,
 				1E5EB14D3605AE3EE6278914 /* libPods-TestOne.a */,
 			);
 			name = Frameworks;
@@ -711,6 +719,7 @@
 				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = metersbonwe.TestOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -737,6 +746,7 @@
 				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = metersbonwe.TestOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

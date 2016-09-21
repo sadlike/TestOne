@@ -10,10 +10,8 @@
 #import "User.h"
 #import "YYModel.h"
 #import <QuartzCore/QuartzCore.h>
-
 //#include "sys/unistd.h"
 //#import "sys/socket.h"t
-
 //宏定义全局并发队列
 #define global_quque    dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 //宏定义主队列
@@ -24,7 +22,6 @@ static NSString *imgUrlTwo=@"http://img5.ibanggo.com/sources/images/goods/TP/810
 @interface ViewController ()
 {
     User *user;
-    
 }
 @property (nonatomic,strong) UIImageView *testImgView;
 @property (nonatomic,strong) UIImageView *showTwoImgView;
@@ -43,10 +40,11 @@ static NSString *imgUrlTwo=@"http://img5.ibanggo.com/sources/images/goods/TP/810
     [self addGraphicsLayer];
 
 //    [self initViewLayer];
-    //qabx
 //    [self initView];
 //    [self dispatchDownLoadImgView];
+
 }
+
 -(void)initViewLayer
 {
 
@@ -74,6 +72,7 @@ static NSString *imgUrlTwo=@"http://img5.ibanggo.com/sources/images/goods/TP/810
      我找到一个创造两个层的方法，在外的层是有边框和阴影带颜色的层，里面的层包含圆角图像和设置mask，这样在外的层绘制阴影，在里的层包含图像。
      [self initNewLayer]
      */
+
                            
 }
 //使用Core Graphics替代图片绘制自定义的层
