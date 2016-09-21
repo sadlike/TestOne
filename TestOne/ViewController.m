@@ -43,7 +43,7 @@ static NSString *imgUrlTwo=@"http://img5.ibanggo.com/sources/images/goods/TP/810
     [self addGraphicsLayer];
 
 //    [self initViewLayer];
-    
+    //qabx
 //    [self initView];
 //    [self dispatchDownLoadImgView];
 }
