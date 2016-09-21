@@ -12,7 +12,9 @@
 
 @interface FourViewController ()
 {
-        UITextField *nameTextField;
+    UITextField *nameTextField;
+    UITextField *passWordTextField;
+    
 }
 @end
 
@@ -26,16 +28,29 @@
     nameTextField.layer.borderWidth=1.0;
     nameTextField.layer.borderColor=[UIColor redColor].CGColor;
     [self.view addSubview:nameTextField];
+    
     UILabel *showLabel=[[UILabel alloc]initWithFrame:CGRectMake(50, 250, 250, 50)];
     showLabel.backgroundColor=[UIColor clearColor];
     showLabel.layer.borderWidth=1.0;
     showLabel.layer.borderColor=[UIColor redColor].CGColor;
-    [self.view addSubview:showLabel];
+//    [self.view addSubview:showLabel];
+    passWordTextField =[[UITextField alloc]initWithFrame:CGRectMake(50, 250, 250, 50)];
+    passWordTextField.backgroundColor=[UIColor clearColor];
+    passWordTextField.layer.borderWidth=1.0;
+    passWordTextField.layer.borderColor=[UIColor redColor].CGColor;
+    [self.view addSubview:passWordTextField];
+    
     [nameTextField.rac_textSignal subscribeNext:^(id x) {
         NSLog(@"--下一个字符－%@",x);
         showLabel.text=[NSString stringWithFormat:@"%@",x];
         
     }];
+    RACSignal *validNameSignal=[nameTextField.rac_textSignal map:^id(id value) {
+        return nil;
+    }];
+                        
+//    RAC(passWordTextField,backgroundColor)=[VAILE ]
+
 
 }
 - (void)viewDidAppear:(BOOL)animated
