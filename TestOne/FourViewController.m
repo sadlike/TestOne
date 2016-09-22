@@ -45,12 +45,44 @@
         showLabel.text=[NSString stringWithFormat:@"%@",x];
         
     }];
-    RACSignal *validNameSignal=[nameTextField.rac_textSignal map:^id(id value) {
-        return nil;
+//    RACSignal *validNameSignal=[nameTextField.rac_textSignal map:^id(id value) {
+//        return nil;
+//    }];
+    RACSignal *usernameSourceSignal = nameTextField.rac_textSignal;
+    RACSignal *filterduset=[usernameSourceSignal filter:^BOOL(id value) {
+        NSString *text = value;
+        return text.length>3;
+        
     }];
-                        
-//    RAC(passWordTextField,backgroundColor)=[VAILE ]
-
+    [filterduset subscribeNext:^(id x) {
+        NSLog(@"。。。。。%@",x );
+        
+    }];
+    
+    [[nameTextField.rac_textSignal filter:^BOOL(id value) {
+        NSString *text =value;
+        return text.length>3;
+     }] subscribeNext:^(id x) {
+         NSLog(@"。。长度多于3才输出文本－%@",x );
+     }];
+    
+    [[[nameTextField.rac_textSignal map:^id(NSString * text) {
+        
+        
+        return @(text.length);
+        
+    }]
+      filter:^BOOL(NSNumber * length) {
+          
+          return [length integerValue]>3;
+      }]
+     
+     subscribeNext:^(id x) {
+         
+         NSLog(@"输出文本的长度－－－%@",x);
+         
+     }];
+    
 
 }
 - (void)viewDidAppear:(BOOL)animated
