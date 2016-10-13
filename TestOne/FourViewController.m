@@ -83,6 +83,10 @@
          
      }];
     
+    
+    [self dispathqueue];
+    
+    
 
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -90,6 +94,52 @@
     NSLog(@"，。。。。。");
     
 }
+//http://blog.csdn.net/jeffasd/article/details/51025703
+//五个案例让你明白GCD死锁
+//serial  dispatch queue  串行队列     123  顺序有序123，，
+// concurrent dispatch queue  并行队列  123  顺序先后不一定
+
+// 串行与并行 针对的是队列   同步与异步 针对的是现成
+
+//dispatch_get_global_queue  全局队列 也是一个并行队列
+//dispatch_get_main_queue    主队列 在主线程中国年运行，因为主线程就一个  所以这是一个串行队列
+
+
+-(void)dispathqueue
+{
+//    dispatch_queue_create("com.demo.serialQueue", DISPATCH_QUEUE_SERIAL);//串行队列
+//    dispatch_queue_create("com.demo.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);//并行队列
+//    dispatch_sync(...., ^{block    //同步
+//    });
+//    dispatch_async(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)//异步
+    
+//    [self testDispatchOne];
+//    [self testDispatchTwo];
+    
+    
+}
+-(void)testDispatchOne
+{
+    NSLog(@"****1******任务1");//
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"****1******任务2");
+    });
+    NSLog(@"*****1*****任务3");
+}
+-(void)testDispatchTwo
+{
+    NSLog(@"*****2*****任务1");
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSLog(@"****2******任务2");
+    });
+    NSLog(@"*****2*****任务3");
+}
+-(void)testDispatchThree
+{
+//    dispatch_queue_t quensse = dispatch_queue_create(@"com.demo.serialQueue", DISPATCH_QUEUE_SERIAL);
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
