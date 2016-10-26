@@ -44,6 +44,13 @@
    
 //    [showImgView setImage:[UIImage imageNamed:@"show"]];
     showImgView.layer.shouldRasterize = YES;//抗锯齿
+
+    //渐变式拉伸 UIImageResizingModeStretch
+//     UIImageResizingModeTile,//进行区域复制模式拉伸
+//    [showImgView.image resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1) resizingMode:UIImageResizingModeTile];
+//    showImgView.image=[[UIImage imageNamed:@"icon_backarrow_big"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1) resizingMode:UIImageResizingModeStretch];
+    
+    
     [showImgView setImage:[[UIImage imageNamed:@"show"] imageWithGradientTintColor:[UIColor orangeColor]]];
     [self.view addSubview:showImgView];
     btn =[UIButton buttonWithType:UIButtonTypeCustom];

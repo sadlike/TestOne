@@ -24,6 +24,12 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
+    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 60, 300, 400)];
+    [self.view addSubview:webview];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    
+    
+    
     nameTextField=[[UITextField alloc]initWithFrame:CGRectMake(50, 150, 250, 50)];
     nameTextField.layer.borderWidth=1.0;
     nameTextField.layer.borderColor=[UIColor redColor].CGColor;
