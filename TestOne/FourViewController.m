@@ -21,6 +21,7 @@
 @implementation FourViewController
 
 - (void)viewDidLoad {
+    //jhjhkjhkjhkjh
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
 

@@ -271,7 +271,7 @@ void MyDrawColoredPattern (void *info,CGContextRef content)
         });
         
     });
-    //12 同是下载 f sdf sdf sdf sf sdf sd fsd fsd fs
+    //12 同是下载 f sdf sdf sdf sf sdf sd fsd fsd kkkk
     
     dispatch_group_notify(group, main_queue, ^{
         
