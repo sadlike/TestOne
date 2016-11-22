@@ -36,8 +36,6 @@
 		958823EA1D66AD850096904E /* UIImage+Corlar.m in Sources */ = {isa = PBXBuildFile; fileRef = 958823E91D66AD850096904E /* UIImage+Corlar.m */; };
 		958823F31D66AFFE0096904E /* UIImage+CustomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 958823F21D66AFFE0096904E /* UIImage+CustomLayer.m */; };
 		95956D8A1DBF448E00BC06C1 /* icon_backarrow_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 95956D891DBF448E00BC06C1 /* icon_backarrow_big.png */; };
-		95956D921DBF4B6900BC06C1 /* 134Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95956D911DBF4B6900BC06C1 /* 134Default-568h@2x.png */; };
-		95956D941DBF4B8600BC06C1 /* 111Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95956D931DBF4B8600BC06C1 /* 111Default@2x.png */; };
 		95956D971DBF4C3C00BC06C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95956D951DBF4C3C00BC06C1 /* Default-568h@2x.png */; };
 		95956D981DBF4C3C00BC06C1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95956D961DBF4C3C00BC06C1 /* Default@2x.png */; };
 		959AF9801D92660A0083560F /* libReactiveCocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959AF97F1D92660A0083560F /* libReactiveCocoa.a */; };
@@ -123,8 +121,6 @@
 		95956D8C1DBF475A00BC06C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		95956D8F1DBF485D00BC06C1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		95956D901DBF485D00BC06C1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		95956D911DBF4B6900BC06C1 /* 134Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "134Default-568h@2x.png"; sourceTree = "<group>"; };
-		95956D931DBF4B8600BC06C1 /* 111Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111Default@2x.png"; sourceTree = "<group>"; };
 		95956D951DBF4C3C00BC06C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		95956D961DBF4C3C00BC06C1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		959AF97F1D92660A0083560F /* libReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactiveCocoa.a; path = "../Library/Developer/Xcode/DerivedData/TestOne-fmqzbchmlumwnpdolnhlaquanibq/Build/Products/Debug-iphonesimulator/ReactiveCocoa/libReactiveCocoa.a"; sourceTree = "<group>"; };
@@ -319,8 +315,6 @@
 				95956D951DBF4C3C00BC06C1 /* Default-568h@2x.png */,
 				95956D961DBF4C3C00BC06C1 /* Default@2x.png */,
 				95603A501D792E99000CA2EB /* image.png */,
-				95956D931DBF4B8600BC06C1 /* 111Default@2x.png */,
-				95956D911DBF4B6900BC06C1 /* 134Default-568h@2x.png */,
 				958823E61D66AB580096904E /* show.png */,
 			);
 			name = ImgSouse;
@@ -484,10 +478,8 @@
 				954AF9821D4B035400513E63 /* LaunchScreen.storyboard in Resources */,
 				95F8BD821D6C4A6F00BD8582 /* SimpleModel.json in Resources */,
 				95F8BD7F1D6C4A6F00BD8582 /* ContainerModel.json in Resources */,
-				95956D941DBF4B8600BC06C1 /* 111Default@2x.png in Resources */,
 				95F8BD7E1D6C4A6F00BD8582 /* BlacklistAndWhitelist.json in Resources */,
 				95956D971DBF4C3C00BC06C1 /* Default-568h@2x.png in Resources */,
-				95956D921DBF4B6900BC06C1 /* 134Default-568h@2x.png in Resources */,
 				954AF97F1D4B035400513E63 /* Assets.xcassets in Resources */,
 				95F8BD811D6C4A6F00BD8582 /* DoubleModel.json in Resources */,
 				958823E71D66AB580096904E /* show.png in Resources */,
