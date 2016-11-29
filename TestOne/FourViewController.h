@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReactiveCocoa.h"
 
 @interface FourViewController : UIViewController
-
+@property (nonatomic,strong) RACSubject *deleteSignal;
 @end

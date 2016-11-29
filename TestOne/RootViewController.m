@@ -12,6 +12,7 @@
 #import "FourViewController.h"
 #import "ThreeViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
+#import "ReactiveCocoa.h"
 
 @interface RootViewController()
 {
@@ -215,11 +216,15 @@
 //    [self changeAn];
     [self changeBackGroundColor] ;
 
-    FourViewController *FOU=[[FourViewController alloc]init];
+    FourViewController *four=[[FourViewController alloc]init];
 //    UINavigationController *NAV=[[UINavigationController alloc]initWithRootViewController:FOU];
+    four.deleteSignal=[RACSubject subject];
+    [four.deleteSignal subscribeNext:^(id x) {
+        NSLog(@"点击了通知按钮---%@",x);
+        
+    }];
     
-
-    [self.navigationController pushViewController:FOU animated:YES];
+    [self.navigationController pushViewController:four animated:YES];
 
 }
 -(void)viewDidDisappear:(BOOL)animated
