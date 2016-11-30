@@ -12,6 +12,9 @@
 		9516568D1D82A70B00DCA496 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9516568C1D82A70B00DCA496 /* ThreeViewController.m */; };
 		951656901D82A8AD00DCA496 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9516568F1D82A8AD00DCA496 /* FourViewController.m */; };
 		951656941D82A96500DCA496 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 951656931D82A96500DCA496 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		951CD7F21DEEAE1F0006708D /* UIViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD7F11DEEAE1F0006708D /* UIViewController+Tracking.m */; };
+		951CD7F61DEEB2E50006708D /* controllerValue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 951CD7F51DEEB2E50006708D /* controllerValue.plist */; };
+		951CD7F91DEEB5960006708D /* UIControl+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD7F81DEEB5960006708D /* UIControl+Tracking.m */; };
 		9528FAD81D7D2511003B09E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9528FAD71D7D2511003B09E0 /* UIKit.framework */; };
 		9528FAE01D7D2D2C003B09E0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9528FADF1D7D2D2C003B09E0 /* SystemConfiguration.framework */; };
 		9528FAE21D7D2D35003B09E0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9528FAE11D7D2D35003B09E0 /* CoreTelephony.framework */; };
@@ -81,6 +84,11 @@
 		9516568F1D82A8AD00DCA496 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 		951656921D82A96500DCA496 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		951656931D82A96500DCA496 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		951CD7F01DEEAE1F0006708D /* UIViewController+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tracking.h"; sourceTree = "<group>"; };
+		951CD7F11DEEAE1F0006708D /* UIViewController+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tracking.m"; sourceTree = "<group>"; };
+		951CD7F51DEEB2E50006708D /* controllerValue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = controllerValue.plist; sourceTree = "<group>"; };
+		951CD7F71DEEB5960006708D /* UIControl+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Tracking.h"; sourceTree = "<group>"; };
+		951CD7F81DEEB5960006708D /* UIControl+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Tracking.m"; sourceTree = "<group>"; };
 		9528FAD71D7D2511003B09E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9528FADF1D7D2D2C003B09E0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9528FAE11D7D2D35003B09E0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -279,6 +287,11 @@
 				95603A4E1D7923C3000CA2EB /* UIImage+Tint.m */,
 				951656881D82A6E900DCA496 /* TwoViewController.h */,
 				951656891D82A6E900DCA496 /* TwoViewController.m */,
+				951CD7F01DEEAE1F0006708D /* UIViewController+Tracking.h */,
+				951CD7F11DEEAE1F0006708D /* UIViewController+Tracking.m */,
+				951CD7F51DEEB2E50006708D /* controllerValue.plist */,
+				951CD7F71DEEB5960006708D /* UIControl+Tracking.h */,
+				951CD7F81DEEB5960006708D /* UIControl+Tracking.m */,
 			);
 			path = TestOne;
 			sourceTree = "<group>";
@@ -479,6 +492,7 @@
 				95F8BD821D6C4A6F00BD8582 /* SimpleModel.json in Resources */,
 				95F8BD7F1D6C4A6F00BD8582 /* ContainerModel.json in Resources */,
 				95F8BD7E1D6C4A6F00BD8582 /* BlacklistAndWhitelist.json in Resources */,
+				951CD7F61DEEB2E50006708D /* controllerValue.plist in Resources */,
 				95956D971DBF4C3C00BC06C1 /* Default-568h@2x.png in Resources */,
 				954AF97F1D4B035400513E63 /* Assets.xcassets in Resources */,
 				95F8BD811D6C4A6F00BD8582 /* DoubleModel.json in Resources */,
@@ -558,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				951656941D82A96500DCA496 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				951CD7F21DEEAE1F0006708D /* UIViewController+Tracking.m in Sources */,
 				9516568A1D82A6E900DCA496 /* TwoViewController.m in Sources */,
 				9516568D1D82A70B00DCA496 /* ThreeViewController.m in Sources */,
 				95F8BD871D6C4AA400BD8582 /* User.m in Sources */,
@@ -568,6 +583,7 @@
 				954AF9771D4B035400513E63 /* AppDelegate.m in Sources */,
 				95F8BD3A1D6C47C500BD8582 /* NSObject+YYModel.m in Sources */,
 				958823EA1D66AD850096904E /* UIImage+Corlar.m in Sources */,
+				951CD7F91DEEB5960006708D /* UIControl+Tracking.m in Sources */,
 				954AF9741D4B035400513E63 /* main.m in Sources */,
 				951656901D82A8AD00DCA496 /* FourViewController.m in Sources */,
 				95F8BD3B1D6C47C500BD8582 /* YYClassInfo.m in Sources */,

@@ -126,8 +126,27 @@
     
     [self dispathqueue];
     
+    //7.6 处理多个请求  都返回结果的时候 才做统一处理
+    RACSignal *request = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+       //发送请求
+        [subscriber sendNext:@"发送请求1"];
+        return nil;
+    }];
+    RACSignal *rquestTwo=[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"发送请求2"];
+        return nil;
+        
+    }];
+    //使用注意：几个信号，参数一的方法就几个参数，每个参数对应信号发出的数据。
+    [self rac_liftSelector:@selector(updateUIWithRl:r2:) withSignalsFromArray:@[request,rquestTwo]];
     
 
+}
+//更新ui
+-(void)updateUIWithRl:(id)data r2:(id)dataTwo
+{
+    NSLog(@"更新ui--%@---%@",data,dataTwo);
+    
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -193,6 +212,13 @@
     [self racTuple];
     [self racMulticastConnection];
     [self racCommand];
+    [self racDefine];
+    RAC(btn,enabled) = [RACSignal combineLatest:@[passWordTextField.rac_textSignal,
+                                                  nameTextField.rac_textSignal,
+                                                 ] reduce:^(NSString *username,NSString *password){
+                                                      return @(username.length>0&&password.length>0);
+                                                 }];
+    
     
     
 
@@ -413,7 +439,32 @@
     
     
 }
-
+//rac 常见宏
+-(void)racDefine
+{
+//1.RAC(TARGET,[KEYPAHT,[NIL_VALUE]]);用于给某个对象的某个属性绑定
+    //基本用法
+    //只要文本框文字改变，就会修改label的文字
+    RAC(btn,titleLabel.text) = passWordTextField.rac_textSignal;
+    
+//2.RACObserve(<#TARGET#>, <#KEYPATH#>) 监听某个对象的某个属性 返回的是信号
+    [RACObserve(self.view, center) subscribeNext:^(id x) {
+        NSLog(@"racobserve---%@",x);
+        
+    }];
+//3.@weakify(obj);@strongify(obj) 一般是配套使用 解决循环引用问题
+//4.racTuplePack：把数据包装成ractuple(元组类)
+    RACTuple *tuple =RACTuplePack(@10,@20);
+         NSLog(@"tuple---%@",tuple);
+//5.ractupleUnpack:把ractuple（元组类）解包成对应的数据
+      RACTuple *tupleu =RACTuplePack(@"xmg",@20);
+    //解包元组会把元组的值，按顺序给参数里面的变量赋值
+//    name=@"xmg"  age=@20
+    RACTupleUnpack(NSString *name,NSNumber *age ) = tupleu;
+    NSLog(@"name--%@----age===%@",name,age);
+    
+    
+}
 -(void)clickme
 {
     btn.center=CGPointMake(150, 100);

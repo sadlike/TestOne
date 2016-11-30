@@ -267,6 +267,8 @@ static int timeS=0;
         [self resumeLayer:tapView.layer];
     }
     timeS++;
+    [self clickBtn];
+    
 }
 //暂停
 -(void)pauseLayer:(CALayer*)layer
