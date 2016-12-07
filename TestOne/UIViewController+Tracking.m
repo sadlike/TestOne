@@ -26,7 +26,7 @@
     /*
      *
      */
-    [self getAllCategory];
+//    [self getAllCategory];
     
     NSLog(@"当前的viewWillAppearController---%@-匹配的value-%@",NSStringFromClass([self class]),vcValue);
 }
@@ -41,7 +41,7 @@
     NSString *value=nil;
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"controllerValue" ofType:@"plist"];
     NSDictionary *controllerValue=[NSDictionary dictionaryWithContentsOfFile:plistPath];
-    NSLog(@"---%@--当前vc-",controllerValue);
+//    NSLog(@"---%@--当前vc-",controllerValue);
     value = [controllerValue objectForKey:controller];
     
     return  value;

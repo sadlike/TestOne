@@ -9,7 +9,7 @@
 #import "FourViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "ReactiveCocoa.h"
-
+#import <Security/Security.h>
 @interface FourViewController ()
 {
     UITextField *nameTextField;
@@ -27,6 +27,20 @@
 @implementation FourViewController
 @synthesize deleteSignal;
 
+-(void)textKit
+{
+    UITextView *textView =[[UITextView alloc]initWithFrame:CGRectMake(0, 0, 320, 600)];
+    textView.text=@"据中国民航网消息，12月1日晚22时20分，首都机场一架由北京飞往首尔仁川机场的外航货运航班在起飞后左侧发动机起火，华北空管局管制员立即启用发动机起火处置预案，指挥其余65架在地面及空中航班进行等待、避让、盘旋，保障起火航班安全返航。据了解，当晚22时20分，该趟航班从首都机场中跑到由南向北起飞，在离地100米后，即将移交给下一个管制单位时，塔台管制员发现其左侧发动机着火，立即向机组通报，机组回复稍等。稍后塔台管制员再次提醒机组检查并向机组询问检查情况，机组第二次回复稍等。经机组检查后通报塔台，确认发动机失效，并宣布紧急状态，要求立即返场落地。主任管制员随即启用发动机起火处置预案，并通知进近主管，协商落地跑道为东跑道，并向首都机场相关单位通报特情。随后，管制员立刻指挥其他飞机避让，通过雷达引导起火航班尽快返航，并限制航班起飞。主任管制员通知消防、救护立即出动，并向应急处置总指挥、东塔台主管通报就近落地，跑道为东跑道。22点26分，消防救护单位到指定地点待命，管制指挥清空相关滑行道、跑道。同时，指挥其下降高度，指挥其他航空器避让，并询问机上人数和有无危险货物。接着，管制员指挥其尽快加入落地程序，并向其通报接地点距离。同时管制员还向其询问着陆重量是否会影响着陆，并再次确认机组能否安全落地。2分钟后，东塔台主任管制员指挥地面航班进行避让，为防止因东跑道停用造成起飞飞机长时间的等待，管制员调整东跑道起飞航班使用中跑道出港。在此期间，进近管制员指挥其他冲突航班在空中进行避让。";
+    [self.view addSubview:textView];
+    UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(110, 100, 100, 102)];
+    UIImageView *imgView=[[UIImageView alloc]initWithFrame:CGRectMake(110, 110, 100, 102)];
+    [imgView setImage:[UIImage imageNamed:@"image.png"]];
+    [imgView setContentMode:UIViewContentModeScaleToFill];
+    [textView addSubview:imgView];
+    textView.textContainer.exclusionPaths =@[circle];
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -34,12 +48,13 @@
 //    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 60, 300, 400)];
 //    [self.view addSubview:webview];
 //    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    [self textKit];
+    return;
     
     btn =[UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:@"点击" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setFrame:CGRectMake(50, 50, 100, 50)];
-    
 
     [self.view addSubview:btn];
 
@@ -218,6 +233,10 @@
                                                  ] reduce:^(NSString *username,NSString *password){
                                                       return @(username.length>0&&password.length>0);
                                                  }];
+    
+//    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+//    [animator addBehavior:];
+    
     
     
     
@@ -433,10 +452,7 @@
     //7.6处理界面有多次请求时，需要都获取到数据时，才能展示界面
     //rac_liftSelector:withSignalsFromArray:Signals:当传入的signals（信号数组） 每一个signal都至少sendnext过一次，就会去出发第一个selector参数的方法
     //注意  几个信号 参数一的方法就几个参数 每个参数对应信号发出的数据
-    
 
-    
-    
     
 }
 //rac 常见宏
@@ -503,7 +519,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)operation
+{
+    NSBlockOperation *theOp=[NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"beginning----");
+    }];
+}
 /*
 #pragma mark - Navigation
 
