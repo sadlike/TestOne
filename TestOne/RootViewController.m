@@ -13,6 +13,10 @@
 #import "ThreeViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "ReactiveCocoa.h"
+#import <Udesk.h>
+#import "UdeskSDKManager.h"
+
+
 
 @interface RootViewController()
 {
@@ -206,6 +210,38 @@
     
     
 }
+-(void)toIm
+{
+    //使用push 推出聊天页面
+    UdeskSDKManager *chat = [[UdeskSDKManager alloc] initWithSDKStyle:[UdeskSDKStyle defaultStyle]];
+    [chat pushUdeskViewControllerWithType:UdeskIM viewController:self completion:^{
+        
+    }];
+    //    [chat presentUdeskViewControllerWithType:UdeskIM viewController:self completion:^{
+    
+    //    }];
+}
+-(void)toRobot
+{
+//    UdeskSDKManager *robot = [[UdeskSDKManager alloc]initWithSDKStyle:[UdeskSDKStyle defaultStyle]];
+//    [robot pushUdeskViewControllerWithType:UdeskIM viewController:self completion:^{
+//        
+//    }];
+    UdeskSDKManager *chat = [[UdeskSDKManager alloc] initWithSDKStyle:[UdeskSDKStyle defaultStyle]];
+    
+    NSDictionary *dict = @{                                                                                               @"productImageUrl":@"http://img.club.pchome.net/kdsarticle/2013/11small/21/fd548da909d64a988da20fa                           0ec124ef3_1000x750.jpg",
+                                                                                                                          @"productTitle":@"测试测试测试测你测试测试测你测试测试测你测试测试测你测试测试测                                       你测试测试测你！",
+                                                                                                                          @"productDetail":@"¥88888.088888.088888.0",
+                                                                                                                          @"productURL":@"http://www.baidu.com"
+                                                                                                                          };
+    [chat setProductMessage:dict];
+//    [chat pushUdeskViewControllerWithType:UdeskIM viewController:self];
+    [chat pushUdeskViewControllerWithType:UdeskIM viewController:self completion:^{
+        
+    }];
+    
+    
+}
 -(void)clickBtn
 {
 //    [self changeFrame];
@@ -215,13 +251,21 @@
 //    [self changeAlpa];
 //    [self changeAn];
     [self changeBackGroundColor] ;
-
+    [self toRobot];
+    
+//    [self toIm];
+    
+    return;
+    
+    //使用present
+//    [chat presentUdeskViewControllerWithType:UdeskIM viewController:self];
+    
+    
     FourViewController *four=[[FourViewController alloc]init];
 //    UINavigationController *NAV=[[UINavigationController alloc]initWithRootViewController:FOU];
     four.deleteSignal=[RACSubject subject];
     [four.deleteSignal subscribeNext:^(id x) {
         NSLog(@"点击了通知按钮---%@",x);
-        
     }];
     
     [self.navigationController pushViewController:four animated:YES];

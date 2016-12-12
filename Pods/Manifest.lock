@@ -27,15 +27,18 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - UdeskSDK (3.4.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - ReactiveCocoa (~> 2.5)
+  - UdeskSDK
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  UdeskSDK: 7cb2d8c3ae41c66169b88c0c7b79db776d993fbb
 
-PODFILE CHECKSUM: 6a1deedc0465d44d9f48c6086549adfab477be90
+PODFILE CHECKSUM: e3eff87548e46a42f4f93bb11e83b4e43f302bfa
 
 COCOAPODS: 1.0.1

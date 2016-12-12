@@ -48,8 +48,43 @@
 //    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 60, 300, 400)];
 //    [self.view addSubview:webview];
 //    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
-    [self textKit];
+//    [self textKit];
+    UIImageView *imageV=[[UIImageView alloc]initWithFrame:CGRectMake(100, 150, 100, 100)];
+//    imageV.image = [UIImage imageNamed:@"show.png"];
+    [self.view addSubview:imageV];
+    UIImage *thudImg=[self thumbnailWithImageWithoutScale:[UIImage imageNamed:@"show.png"] size:CGSizeMake(100, 100)];
+    UIImage *THUI=[self scaleImage:[UIImage imageNamed:@"a.png"] toScale:0.9];
+     NSData *imageData = UIImageJPEGRepresentation(THUI,0.00001);
+//    imageV.image = THUI;
+        NSData *imageData2 = UIImageJPEGRepresentation(THUI,1);
+    imageV.image=[UIImage imageWithData:imageData2];
+    
+    imageV.backgroundColor=[UIColor redColor];
+    
+   
+  float  length = [imageData length]/1000;
+
+    float lenth2=[imageData2 length]/1000;
+    NSLog(@"-data--%f---%f",length,lenth2);
+    
+      UIImageView *imageVs=[[UIImageView alloc]initWithFrame:CGRectMake(100, 300, 100, 100)];
+      imageVs.image=[UIImage imageNamed:@"show.png"];
+    
+        [self.view addSubview:imageVs];
+    int  k =-10;
+    
+    do {
+        for (int a =0; a<100; a++) {
+            NSLog(@"abc--%d",a);
+            
+        }
+        k++;
+        
+    } while (k<0);
+    NSLog(@"do走完了 再走");
+    
     return;
+    
     
     btn =[UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:@"点击" forState:UIControlStateNormal];
@@ -525,6 +560,55 @@
         NSLog(@"beginning----");
     }];
 }
+
+
+
+
+//2.保持原来的长宽比，生成一个缩略图
+- (UIImage *)thumbnailWithImageWithoutScale:(UIImage *)image size:(CGSize)asize
+{
+    UIImage *newimage;
+    if (nil == image) {
+        newimage = nil;
+    }
+    else{
+        CGSize oldsize = image.size;
+        CGRect rect;
+        if (asize.width/asize.height > oldsize.width/oldsize.height) {
+            rect.size.width = asize.height*oldsize.width/oldsize.height;
+            rect.size.height = asize.height;
+            rect.origin.x = (asize.width - rect.size.width)/2;
+            rect.origin.y = 0;
+        }
+        else{
+            rect.size.width = asize.width;
+            rect.size.height = asize.width*oldsize.height/oldsize.width;
+            rect.origin.x = 0;
+            rect.origin.y = (asize.height - rect.size.height)/2;
+        }
+        UIGraphicsBeginImageContext(asize);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
+        UIRectFill(CGRectMake(0, 0, asize.width, asize.height));//clear background
+        [image drawInRect:rect];
+        newimage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return newimage;
+}
+
+//等比缩放
+- (UIImage *)scaleImage:(UIImage *)image toScale:(float)scaleSize
+{
+    UIGraphicsBeginImageContext(CGSizeMake(image.size.width * scaleSize, image.size.height * scaleSize));
+    [image drawInRect:CGRectMake(0, 0, image.size.width * scaleSize, image.size.height * scaleSize)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return scaledImage;
+}
+
+
 /*
 #pragma mark - Navigation
 

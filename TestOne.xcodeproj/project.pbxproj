@@ -745,7 +745,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TestOne/alipay3.0.1";
+				HEADER_SEARCH_PATHS = "$(inherited)/TestOne/alipay3.0.1";
 				INFOPLIST_FILE = TestOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -772,7 +772,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TestOne/alipay3.0.1";
+				HEADER_SEARCH_PATHS = "$(inherited)/TestOne/alipay3.0.1";
 				INFOPLIST_FILE = TestOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

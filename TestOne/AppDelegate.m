@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "VHSSteps.h"
+#import "Udesk.h"
 
 // 计步器开始计步时间（秒）
 #define ACCELERO_START_TIME 2
@@ -35,11 +36,32 @@
     self.window.backgroundColor=[UIColor whiteColor];
     rvc=[[RootViewController alloc]init ];
     UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:rvc];
-    
     self.window.rootViewController=nav;
     [self.window makeKeyAndVisible];
 //    [self initAccelerometer];
 //    [self startAccelerometer];
+    [UdeskManager initWithAppKey:@"f172867fed7888461a50e7554b3cb708" appId:@"5d2199e46507908a" domain:@"15634883414"];
+    [UdeskManager getCustomerFields:^(id responseObject, NSError *error) {
+        NSLog(@"--********--%@",responseObject);
+        
+    }];
+    
+    NSDictionary *parameters = @{
+                                 @"user": @{
+                                         @"nick_name": @"小明",
+                                         @"cellphone":@"18888888888",
+                                         @"email":@"xiaoming@qq.com",
+                                         @"description":@"用户描述",
+                                         @"sdk_token":@"1gas"
+                                         }
+                                 };
+    
+    [UdeskManager createCustomerWithCustomerInfo:parameters];
+    [UdeskManager requestRandomAgent:^(UdeskAgent *agent, NSError *error) {
+        NSLog(@"agent--%@---%@",agent.nick,agent.message);
+        
+    }];
+
     
     return YES;
 }
